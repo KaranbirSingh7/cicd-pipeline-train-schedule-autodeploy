@@ -53,7 +53,6 @@ pipeline {
                 )
             }
         }
-        
         stage('SmokeTests') {
             when {
                 branch 'master'
@@ -68,10 +67,8 @@ pipeline {
                     if (response.status != 200) {
                         error("Smoke test against canary deployment failed.")
                 }
-            }
-            
-        }
-        
+            }   
+        }       
         stage('DeployToProduction') {
             when {
                 branch 'master'
